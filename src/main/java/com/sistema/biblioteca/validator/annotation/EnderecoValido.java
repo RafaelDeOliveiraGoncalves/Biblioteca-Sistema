@@ -1,4 +1,4 @@
-package com.sistema.biblioteca.validator.anotation;
+package com.sistema.biblioteca.validator.annotation;
 
 import com.sistema.biblioteca.validator.ValidaEndereco;
 import jakarta.validation.ConstraintValidator;
@@ -8,7 +8,7 @@ public class EnderecoValido implements ConstraintValidator<Endereco, String> {
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context){
-        if(value.isBlank()){
+        if(value == null || value.isBlank()){
             return true;
         }
         return ValidaEndereco.validaEndereco(value);

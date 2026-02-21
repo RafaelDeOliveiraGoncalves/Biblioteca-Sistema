@@ -1,10 +1,7 @@
 package com.sistema.biblioteca.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.io.Serializable;
 import java.util.UUID;
@@ -12,14 +9,15 @@ import java.util.UUID;
 @Entity
 @Table(name = "livro")
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @ToString
 public class Livro implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_livro")
-    private UUID id;
+    private Integer id;
 
     @Column(name = "titulo")
     private String titulo;

@@ -1,4 +1,4 @@
-package com.sistema.biblioteca.validator.anotation;
+package com.sistema.biblioteca.validator.annotation;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME) // Diz que o Spring deve ler isso com o sistema rodando
 @Constraint(validatedBy = EnderecoValido.class) // Aqui é onde liga a etiqueta ao seu código de lógica
 public @interface Endereco {
-    String mensagem() default "Endereço inválido. Deve conter nome e número.";
+    String message() default "Endereço inválido. Deve conter nome e número.";
 
     //Esses dois campos abaixo são obrigatórios pelo Bean Validation (padrão do Java)
     Class<?>[] groups() default {};

@@ -1,9 +1,7 @@
 package com.sistema.biblioteca.validator;
 
-import org.springframework.stereotype.Component;
 import java.util.regex.Pattern;
 
-@Component
 public class ValidaEndereco {
 
     private static final Pattern ENDERECO_PATTERN = Pattern.compile(
